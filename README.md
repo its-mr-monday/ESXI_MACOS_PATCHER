@@ -1,15 +1,17 @@
 # MACOS VMX EXPLOIT PATCHER
 
-This exploit allows VMWare ESXI 7.0 servers to emulate MacOS Sonoma 14
-It tricks the system into thinking it is running on a real Mac.
-It does this by modifying the VMX file to include match the SMBIOS of a real Mac.
+ This exploit allows VMWare ESXI 6.7 / 7.0 servers to emulate MacOS Sonoma
+ 
+ It tricks the OS into thinking it is running on a real Mac.
+ 
+ It does this by modifying the VMX file to include a match for the SMBIOS of a real Mac.
 
 ## Notice
-This is a proof of concept
-This is for educational purposes only
-We are not responsible for any damages caused by this software
-We are not responsible for any legal actions taken against you for using this software
-We do not condone the use of this software for any illegal activities
+ - This is a proof of concept
+ - This is for educational purposes only
+ - We are not responsible for any damages caused by this software
+ - We are not responsible for any legal actions taken against you for using this software
+ - We do not condone the use of this software for any illegal activities
 
 ## Prerequisites
  - [VMWare ESXI](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-016E39C1-E8DB-486A-A235-55CAB242C351.html)
