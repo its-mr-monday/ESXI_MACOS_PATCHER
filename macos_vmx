@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#Ensure python3 is a valid command
+if ! command -v python3 &> /dev/null
+then
+    echo "Python3 is not installed. Please install it and try again."
+    exit 1
+fi
+
+#Setup globals
+BASEDIR=$(realpath $(dirname $0))
+STARTDIR=$PWD
+
+cd $BASEDIR
+
+#Check if venv exists
+#If not, create it
+install_venv() {
+	if [ ! -d "venv" ]; then
+		python3 -m venv venv
+		source venv/bin/activate
+		pip3 install -r requirements.txt
+		deactivate
+	fi
+}
+
+activate_venv() {
+	source venv/bin/activate
+}
+
+install_venv
+activate_venv
+#LAUCNH WITH ALL ARGS PASSED TO THIS SCRIPT
+python3 macos_vmx.py $@
+#Get return code of last command, should be 0 or 1 and call exit 
+return_code=$?
+deactivate
+cd $STARTDIR
+exit $return_code
+
